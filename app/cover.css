@@ -19,21 +19,51 @@
 body {
   text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
   box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+  /* background-color: #49D0EE; */
 }
 
-.cover-container {
-  max-width: 42em;
+/* .col-6{
+  height: 70vh;
+} */
+.overview {
+  background-color: #49d0ee;
+  height: 50vh;
 }
+
+.demo {
+  background-color: #2d90a6;
+  height: 70vh
+}
+
+.about_text {
+  background-color: #2d90a6;
+  padding: 0.5em 1em 0.5em 1em;
+  width: fit-content;
+  margin: 10px;
+  font-size: 16pt;
+}
+p.about_text {
+  text-align: left;
+  font-size: 12pt;
+}
+.section{
+  margin: 10px;
+}
+
 
 
 /*
  * Header
  */
 
+ h3 {
+  font-family: 'Red Hat Text', sans-serif;
+ }
+
 .nav-masthead .nav-link {
-  padding: .25rem 0;
+  padding: 1em;
   font-weight: 700;
-  color: rgba(255, 255, 255, .5);
+  color: white;
   background-color: transparent;
   border-bottom: .25rem solid transparent;
 }
