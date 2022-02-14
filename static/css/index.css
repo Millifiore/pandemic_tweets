@@ -46,12 +46,32 @@ p.about_text {
   text-align: left;
   font-size: 12pt;
 }
+p.diagram_text {
+  text-align: left;
+  font-size: 12pt;
+  padding: 0.5em 1em 0.5em 1em;
+  width: fit-content;
+  margin: 10px;
+  color: white;
+  background-color: #49d0ee;
+}
 .section{
   margin: 10px;
 }
 
 .section .intro {
   margin-top: 25px;
+}
+.handle_input{
+  margin-top: 7em;
+  margin-left: 3.5em;
+  width: 500px;
+}
+.btn {
+  float: right;
+  margin-right: 4em;
+  background-color: #49d0ee;
+  border-color: #49d0ee;
 }
 
 
@@ -88,4 +108,9 @@ p.about_text {
 .nav-masthead .active {
   color: #fff;
   border-bottom-color: #fff;
+}
+.diagram{
+  width: 450px;
+  height: 350px;
+  /* margin-top:5em; */
 }

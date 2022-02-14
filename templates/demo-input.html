@@ -48,32 +48,17 @@
     <div class="row">
       <div class="col-6 overview">
         <div class="section intro">
-        <div class="row about_text">Overview</div>
-        <p class="row about_text">Our team’s intention is to build an open source tool that will accurately label text-based posts as misinformation and point users to correct sources of COVID-19 information.</p>
-      </div>
-      <div class="section">
-        <div class="row about_text">Why does this matter?</div>
-        <p class="row about_text"> Everyday, posts are shared with the sole intent of informing those within your network. However, these shared posts may contain either falsehoods or outdated information. 
-          Social Media Platforms are the public’s fastest source for consuming information, but are they accurately informing the public?</p>
-        </div>
-        <div class="section">
-        <div class="row about_text">Potential Audience</div>
-        <p class="row about_text">Our audience is the open source community. Developing an open source tool will allow for further improvements of the tool to be built within the community.
-
-        </p>
+        <div class="row about_text">Try it yourself</div>
+        <p class="row about_text">Step 1: Type in the twitter user handle you want to analyze. (i.e. @NIH, @CDC, etc)</p>
+        <p class="row about_text">Step 2: Click submit to screen the latest COVID-19 tweets from that user.</p>
       </div>
       </div>
       <div class="col-6 demo">
-        <div>
-        <nav class="nav nav-masthead justify-content-center float-md-end">
-          <a class="nav-link about" href="/about">About</a>
-          <a class="nav-link" href="/demo-input">Demo</a>
-        </nav>
-      </div>
-      <div>
-        <img class="diagram" src="/static/img/model_arch.svg">
-        <p class="row diagram_text">Our team decided that BERT (Bidirectional Encoder Representations from Transformers) was the best implementation of NLP to accurately detect misinformation in the social media post datasets. Our team chose to use DistiliBERT,a pre-trained version of BERT that is 40% smaller, 60% faster, and retains 97% of language understanding capabilities.</p>
+        <div class="input-group mb-3 handle_input">
+          <span class="input-group-text" id="basic-addon1">@</span>
+          <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
         </div>
+        <button type="button" class="btn btn-primary">SUBMIT</button>
       </div>
     </div>
 
