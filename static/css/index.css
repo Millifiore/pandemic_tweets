@@ -62,7 +62,8 @@ p.about-text {
   font-size: 12pt;
 }
 
-p.diagram_text {
+p.diagram-text,
+p.demo-text {
   text-align: left;
   font-size: 12pt;
   padding: 0.5em 1em 0.5em 1em;
