@@ -58,9 +58,24 @@
               <div class="input-group mb-3 handle-input">
                 <p class="demo-text">Interested in seeing if a Twitter user posts legitimate information about COVID-19?</p>
                 <p class="demo-text">Please type in a user's Twitter handle starting with the "@" to generate a report:</p>
-                <input type="text" class="form-control" placeholder="Twitter Handle" aria-label="Username" aria-describedby="basic-addon1">
+                <form action="/" method="post">
+                  <input
+                    id="userHandleInputField" 
+                    type="text" 
+                    class="form-control" 
+                    placeholder="Twitter Handle" 
+                    aria-label="Username" 
+                    aria-describedby="basic-addon1"
+                  >
+                </form>
               </div>
-              <button type="button" class="btn btn-primary">SUBMIT</button>
+              <button
+                id="userHandleSubmitBtn" 
+                type="button" 
+                class="btn btn-primary"
+              >
+                SUBMIT
+              </button>
             </div>
             <div class="about-div-right">
               <img class="diagram" src="/static/img/model_arch.svg">
@@ -83,7 +98,10 @@
       var demoDivLeftPanel = ".demo-div-left";
       var demoDivRightPanel = ".demo-div-right";
 
+      var hashtagSubmitBtn = "#userHandleSubmitBtn";
 
+
+      // if demo button clicked, hide about
       $(demoBtn).click(function() {
         $(aboutDivRightPanel).addClass("hidden");
         $(aboutDivLeftPanel).addClass("hidden");
@@ -93,6 +111,7 @@
 
       });
 
+      // if about button click, hide demo
       $(aboutBtn).click(function() {
         $(aboutDivRightPanel).removeClass("hidden");
         $(aboutDivLeftPanel).removeClass("hidden");
@@ -100,6 +119,28 @@
         $(demoDivLeftPanel).addClass("hidden");
         $(demoDivRightPanel).addClass("hidden");
       });
+
+      $(hashtagSubmitBtn).click(function (e) {
+        e.preventDefault();
+
+        var hashtagVal = $("#userHandleInputField").val();
+        $.ajax({
+          url: "/",
+          type: "POST",
+          data: {
+            "user_handle": hashtagVal
+          },
+          success: function(response) {
+            //
+          },
+          error: function(err) {
+            console.log("err ==>", err);
+          }
+        });
+
+      });
+
+
     </script> 
   </body>
 </html>
