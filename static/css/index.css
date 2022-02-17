@@ -2,7 +2,6 @@
  * Globals
  */
 
-
 /* Custom default button */
 .btn-secondary,
 .btn-secondary:hover,
@@ -11,13 +10,13 @@
   text-shadow: none; /* Prevent inheritance from `body` */
 }
 
-
 /*
  * Base structure
  */
 
 body {
-  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+  /* text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5); */
+  text-shadow: none;
   box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
   /* background-color: #49D0EE; */
 }
@@ -25,28 +24,46 @@ body {
 /* .col-6{
   height: 70vh;
 } */
+
 .overview {
   background-color: #49d0ee;
-  height: 55vh;
+  /* height: 55vh; */
+  height: auto;
+}
+
+.mb-auto {
+  margin-bottom: 5vh !important;
 }
 
 .demo {
   background-color: #2d90a6;
-  height: 70vh
+  /* height: 70vh */
+  height: auto;
 }
 
-.about_text {
+.hidden {
+  display: none;
+}
+
+.container {
+  min-width: 300px;
+}
+
+.about-text {
   background-color: #2d90a6;
   padding: 0.5em 1em 0.5em 1em;
   width: fit-content;
   margin: 10px;
   font-size: 16pt;
 }
-p.about_text {
+
+p.about-text {
   text-align: left;
   font-size: 12pt;
 }
-p.diagram_text {
+
+p.diagram-text,
+p.demo-text {
   text-align: left;
   font-size: 12pt;
   padding: 0.5em 1em 0.5em 1em;
@@ -55,25 +72,21 @@ p.diagram_text {
   color: white;
   background-color: #49d0ee;
 }
-.section{
-  margin: 10px;
-}
 
 .section .intro {
   margin-top: 25px;
 }
-.handle_input{
+
+.handle_input {
   margin-top: 7em;
-  margin-left: 3.5em;
-  width: 500px;
 }
+
 .btn {
   float: right;
-  margin-right: 4em;
+  margin: 0 auto;
   background-color: #49d0ee;
   border-color: #49d0ee;
 }
-
 
 /*
  * Header
@@ -82,6 +95,24 @@ p.diagram_text {
  h3 {
   font-family: 'Red Hat Text', sans-serif;
  }
+
+ nav a {
+   cursor: pointer;
+ }
+
+ .bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
 
 .nav-masthead .nav-link {
   padding: 1em;
@@ -110,7 +141,14 @@ p.diagram_text {
   border-bottom-color: #fff;
 }
 .diagram{
-  width: 450px;
-  height: 350px;
+  /* width: 450px;
+  height: 350px; */
+  width: 100%;
   /* margin-top:5em; */
+}
+
+@media (max-width: 800px) {
+  .col-6 {
+    width: inherit;
+  }
 }
