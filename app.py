@@ -6,8 +6,7 @@ app = Flask(__name__, template_folder="templates", static_folder='static')
 title = "detecting COVID-19 misinformation in text-based social media posts."
 footer = "This Single Page Application is powered by Flask and JQuery"
 
-@app.route("/", methods=["GET", "POST"])
-
+@app.route("/about", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
         data = request.form.getlist("user_handle")
@@ -16,12 +15,12 @@ def index():
 
 # Demo Input Route
 @app.route("/demo-input")
-def demo():
+def demo_input():
     return render_template("demo-input.html", title=title, footer=footer)
 
 # Demo Output Route
 @app.route("/demo-output")
-def input():
+def demo_output():
     return render_template("demo-output.html", title=title, footer=footer)
 
 if __name__ == '__main__':
