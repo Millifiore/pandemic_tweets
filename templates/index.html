@@ -30,11 +30,6 @@
           <div class="spinner hidden"></div>
           <div class="row">
             <div class="col-6 overview">
-              <div class="demo-div-left hidden">
-                <p class="row about-text">Try it yourself</p>
-                <p class="row about-text">Step 1: Type in the twitter user handle you want to analyze. (i.e. @NIH, @CDC, etc)</p>
-                <p class="row about-text">Step 2: Click submit to screen the latest COVID-19 tweets from that user.</p>
-              </div>
               <div class="about-div-left">
                 <div class="section intro">
                   <p class="row about-text">Overview</p>
@@ -54,32 +49,9 @@
             <div class="col-6 demo">
               <div>
                 <nav class="nav nav-masthead justify-content-center float-md-end">
-                  <a class="nav-link about">About</a>
-                  <a class="nav-link demo">Demo</a>
+                  <a class="nav-link about" href="/about">About</a>
+                  <a class="nav-link demo" href="/demo-input">Demo</a>
                 </nav>
-              </div>
-              <div class="demo-div-right hidden">
-                <div class="input-group mb-3 handle-input">
-                  <p class="demo-intro">Interested in seeing if a Twitter user posts legitimate information about COVID-19?</p>
-                  <p class="demo-text">Please type in a user's Twitter handle starting without the "@" to generate a report:</p>
-                  <form action="/" method="post">
-                    <input
-                      id="userHandleInputField" 
-                      type="text" 
-                      class="form-control" 
-                      placeholder="Twitter handle" 
-                      aria-label="Username" 
-                      aria-describedby="basic-addon1"
-                    >
-                  </form>
-                </div>
-                <button
-                  id="userHandleSubmitBtn" 
-                  type="button" 
-                  class="btn btn-primary"
-                >
-                  Submit
-                </button>
               </div>
               <div class="about-div-right">
                 <img class="diagram" src="/static/img/model_arch.svg">
@@ -93,6 +65,5 @@
         </footer> 
       </div>
     </div>
-    <script src="static/js/app.js"></script> 
   </body>
 </html>
