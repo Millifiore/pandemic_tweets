@@ -2,16 +2,15 @@ import numpy as np
 import pandas as pd
 import torch
 import transformers as ppb
-
+import warnings
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import GridSearchCV
-
+warnings.filterwarnings('ignore')
 
 ## IMPORTING THE DATASET
 
-df = pd.read_csv('/content/rumor_data/rumordata_cleaned.csv', delimiter=',',skiprows=1, header=None, names=['label','content']) #Read in the data, skipping the labels in the first row.
-
+df = pd.read_csv('rumor_data/rumordata_cleaned.csv', delimiter=',',skiprows=1, header=None, names=['label','content']) #Read in the data, skipping the labels in the first row.
 pos_label = df[df['label']==1] #Grab the data labeled 1 and slice 500 of them
 pos_label = pos_label[:500]
 neg_label = df[df['label']==0] #Do the same thing above for data labeled 0
@@ -51,6 +50,7 @@ def pre_proc(series, tokenizer):  # Function for preprocessing data for encoding
 padded, attention_mask = pre_proc(covid_dataset['content'], tokenizer)  # Pre processes the covid_dataset
 
 ##  ENCODING WITH DISTILBERT
+
 def encode(model, attention_mask, padded): #Function that runs the bert model and encodes the data
   input_ids = torch.tensor(padded)  #creates input ids
   attention_mask = torch.tensor(attention_mask) #applies the attention mask
@@ -62,9 +62,11 @@ def encode(model, attention_mask, padded): #Function that runs the bert model an
 
   return features
 
+
 features = encode(model, attention_mask, padded) #Creates features out of encode()
 
 ## LOGISTIC REGRESSION
+
 def log_reg(features, series):  # Runs our classficiation model
     labels = series
     train_features, test_features, train_labels, test_labels = train_test_split(features, labels)
@@ -74,7 +76,7 @@ def log_reg(features, series):  # Runs our classficiation model
     grid_search.fit(train_features, train_labels)
 
     print('Best Parameter: ', grid_search.best_params_)
-    print('Best Scrore Using GridSearchCV: ', grid_search.best_score_)
+    print('Best Score Using GridSearchCV: ', grid_search.best_score_)
 
     lr_clf = LogisticRegression(C=5.263252631578947)  # Initiates our Logistic Regression Model
     lr_clf.fit(train_features, train_labels)  # Fits our data
