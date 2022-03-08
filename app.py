@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, make_response
 from twint_integrate.twint_search import search
+from model import twint_parse
 
 app = Flask(__name__, template_folder="templates", static_folder='static')
 
@@ -31,6 +32,7 @@ def demo_input():
 # Demo Output Route
 @app.route("/demo-output")
 def demo_output():
+    json_data = twint_parse("userTweets.csv")
     return render_template("demo-output.html", title=title, footer=footer)
 
 if __name__ == '__main__':
