@@ -28,6 +28,7 @@ model = model_class.from_pretrained(pretrained_weights) # Load the pretrained mo
 
 # PREPROCESSING THE DATA FOR DISTILBERT
 def pre_proc(series, tokenizer):  # Function for preprocessing data for encoding
+    print("in pre_proc")
     tokenized = series.apply((lambda x: tokenizer.encode(x, add_special_tokens=True)))  # Tokenizes series
     max_len = 0  # Finds the max len of the sentences
     for i in tokenized.values:
@@ -45,6 +46,7 @@ padded, attention_mask = pre_proc(covid_dataset['content'], tokenizer)  # Pre-pr
 
 #  ENCODING WITH DISTILBERT
 def encode(model, attention_mask, padded): # Function that runs the bert model and encodes the data
+    print("in encode")
     input_ids = torch.tensor(padded)  # Creates input ids
     attention_mask = torch.tensor(attention_mask) # Applies the attention mask
 
@@ -61,6 +63,7 @@ features = encode(model, attention_mask, padded)  # Create features out of encod
 
 # LOGISTIC REGRESSION
 def log_reg(features, series):  # Runs our classification model
+    print("in log_reg")
     labels = series
     train_features, test_features, train_labels, test_labels = train_test_split(features, labels)
 
@@ -84,7 +87,8 @@ lr_clf = log_reg(features, covid_dataset["label"])  # Saves the trained model
 
 
 # TWINT DATA
-def twint(csv):
+def twint_parse(csv):
+    print("in twint_parse")
     twint_df = pd.read_csv(csv)
     twint_tweets = twint_df[['tweet']]  # Subsets the dataframe to only have the "tweet column"
 
