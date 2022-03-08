@@ -7,16 +7,18 @@ def predictedTweets(csv):
             df = pd.read_csv(f)
     # Get Values for Prediction Results
     print(df.columns.values)
-    df_small = df['tweet', 'username']
-#     df_false = df[df['label'] == 0]
+    cols = ["username", "tweet"]
+    df_small = df[cols]
+    df_small = df[df['label'] == 1]
 
     # Misinformation Dict for Data
-#     prediction_data = {}
-#     prediction_data.total = df.count(axis=0)
-#     prediction_data.misinfo = df_false.count(axis=0)
-#     prediction_data.headers = list(df.columns)
+    prediction_data = {}
+    prediction_data.tweets = df.shape[0]
+    prediction_data.misinfo = df_small.shape[0]
+    prediction_data.handle = df["username"][0]
+    
 
     # Create HTML Table
     # result_true = df_true.to_html()
 #     print(prediction_data)
-    return df_small
+    return prediction_data, df_small

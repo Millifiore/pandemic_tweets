@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, make_response
 from twint_integrate.twint_search import search
 from twint_wordcloud.wordcloud_html import word_cloud
-from predict_tweets.model import twint_parse
+# from predict_tweets.model import twint_parse
 from predict_tweets.predictedData import predictedTweets
 
 
@@ -9,11 +9,7 @@ app = Flask(__name__, template_folder="templates", static_folder='static')
 
 title = "detecting COVID-19 misinformation in text-based social media posts."
 footer = "This Single Page Application is powered by Flask and JQuery"
-predictionData = {
-    "tweets" : 100,
-    "misinfo": 50,
-    "handle": "@NIH"
-}
+
 
 @app.route("/", methods=["GET", "POST"])
 def index():
@@ -41,8 +37,8 @@ def demo_input():
 @app.route("/demo-output")
 def demo_output():
     wc = word_cloud('userTweets.csv')
-    predict = predictedTweets("userTweets.csv")
-    return render_template("demo-output.html", title=title, footer=footer, wc=wc, tweets= predictionData["tweets"], misinfo= predictionData["misinfo"], handle = predictionData["handle"], tables=[predict.to_html(classes='data')], titles=predict.columns.values )
+    predict, df = predictedTweets("predictedTweets.csv")
+    return render_template("demo-output.html", title=title, footer=footer, wc=wc, tweets= predict["tweets"], misinfo= predict["misinfo"], handle = predict["handle"], tables=[df.to_html(classes=["data", "table-bordered", "table-striped", "table-hover"])], titles=df.columns.values )
 
 if __name__ == '__main__':
     app.run(debug=True)
