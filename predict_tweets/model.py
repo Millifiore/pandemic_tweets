@@ -90,8 +90,7 @@ lr_clf = log_reg(features, covid_dataset["label"])  # Saves the trained model
 def twint_parse(csv):
     print("in twint_parse")
     twint_df = pd.read_csv(csv)
-    twint_tweets = twint_df[['tweet']]  # Subsets the dataframe to only have the "tweet column"
-
+    twint_tweets = twint_df['tweet']  # Subsets the dataframe to only have the "tweet column"
     padded, attention_mask = pre_proc(twint_tweets['tweet'], tokenizer)  # Pre-processes the twint_dataframe
     features = encode(model, attention_mask, padded)  # Create features out of encode()
 

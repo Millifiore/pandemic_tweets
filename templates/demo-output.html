@@ -38,7 +38,7 @@
     <!-- Custom styles for this template -->
     <link rel= "stylesheet" href= "/static/css/index.css"/>
   </head>
-  <body class="d-flex h-100 text-center text-white">
+  <body class="d-flex h-100 text-center text-white bg-dark">
     
 <div class="container d-flex p-3 mx-auto flex-column">
   <header class="mb-auto">
@@ -51,11 +51,15 @@
     <div class="row">
       <div class="col-6 overview">
         <div class="section intro">
-        <div class="row about-text">Prediction Output</div>
-        <div class="input-group mb-3 handle-input">
-          <span class="input-group-text" id="basic-addon1">@</span>
-          <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-        </div>
+          <p class="row about-text">Prediction Output</p>
+          <p class="row about-text">Out of <b>{{tweets}}</b> tweets for <b>{{handle}}</b>, our model detected <b>{{misinfo}}</b> tweets contained misinformation. See labeled tweets below.</p>
+        <!-- <div class="row about-text">Prediction Output</div> -->
+        <div>
+          {% for table in tables %}
+            {{titles[loop.index]}}
+            {{ table|safe }}
+          {% endfor %}
+          </div>
       </div>
       </div>
       <div class="col-6 demo">
