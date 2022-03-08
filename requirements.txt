@@ -1,0 +1,8 @@
+Flask==2.0.2
+matplotlib==3.3.4
+pandas==1.1.5
+Pillow==8.4.0
+wordcloud==1.8.1
+gunicorn==20.1.0
+git+https://github.com/twintproject/twint.git@origin/master#egg=twint
+
