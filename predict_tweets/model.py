@@ -96,9 +96,9 @@ def twint_parse(csv):
 
     twint_labels = lr_clf.predict(features)  # Saves predicted labels as an array
     twint_df['label'] = twint_labels  # Adds a new column to twint_df for predicted labels
-    twint_json = pd.DataFrame.to_json(twint_df)  # Converts dataframe into JSON
+    twint_df.to_csv("predictedTweets.csv", index=False)  # Converts dataframe into CSV
 
-    return twint_json
+    # return twint_json
 
 
 

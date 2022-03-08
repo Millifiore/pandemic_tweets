@@ -1,6 +1,5 @@
 # importing pandas as pd
 import pandas as pd
-# from IPython.display import HTML
 
 def predictedTweets(csv):
     with open(csv, encoding="utf8", errors='ignore') as f:
@@ -18,7 +17,4 @@ def predictedTweets(csv):
     prediction_data.handle = df["username"][0]
     
 
-    # Create HTML Table
-    # result_true = df_true.to_html()
-#     print(prediction_data)
     return prediction_data, df_small
