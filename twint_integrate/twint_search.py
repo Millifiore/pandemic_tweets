@@ -8,4 +8,5 @@ def search(user_handle):
     twint.run.Search(c)
     tweets_df = twint.storage.panda.Tweets_df
 
-    print(tweets_df)
+    csv = tweets_df.to_csv()
+    return csv
