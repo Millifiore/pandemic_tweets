@@ -52,30 +52,14 @@
       <div class="col-6 overview">
         <div class="section intro">
           <p class="row about-text">Prediction Output</p>
-          <p class="row about-text">Out of <b>{{tweets}}</b> tweets for <b>{{handle}}</b>, our model detected <b>{{misinfo}}</b> tweets contained misinformation. See labeled tweets below.</p>
+          <p class="about-text">Out of <b>{{tweets}}</b> tweets for <b>@{{handle}}</b>, our model detected <b>{{misinfo}}</b> tweet(s) that may contain misinformation. See labeled tweets below.</p>
         <!-- <div class="row about-text">Prediction Output</div> -->
-        <table class="table table-bordered table-dark">
+        <table>
           {% for table in tables %}
             {{titles[loop.index]}}
             {{ table|safe }}
           {% endfor %}
         </table>
-        <!-- <table class="table table-bordered table-dark">
-          <thead>
-              <tr>
-                  <th>Username</th>
-                  <th>Tweet</th>
-              <tr>
-          </thead>
-          <tbody>
-              {% for row in rows %}
-              <tr>
-                  <td>{{ row.username }}</td>
-                  <td>{{ row.tweet }}</td>
-              </tr>
-              {% endfor %}
-          </tbody>
-      </table> -->
       </div>
       </div>
       <div class="col-6 demo">

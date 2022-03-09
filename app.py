@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, make_response
 from twint_integrate.twint_search import search
 from twint_wordcloud.wordcloud_html import word_cloud
-from predict_tweets.model import twint_parse
+# from predict_tweets.model import twint_parse
 from predict_tweets.predictedData import predictedTweets
 
 
@@ -36,10 +36,10 @@ def demo_input():
 # Demo Output Route
 @app.route("/demo-output")
 def demo_output():
-    wc = word_cloud('userTweets.csv')
-    twint_parse('userTweets.csv')
+    wc, row_count = word_cloud('userTweets.csv')
+    # twint_parse('userTweets.csv')
     predict, df = predictedTweets("predictedTweets.csv")
-    return render_template("demo-output.html", title=title, footer=footer, wc=wc, tweets= predict["tweets"], misinfo= predict["misinfo"], handle = predict["handle"], tables=[df.to_html(classes=["data", "table-bordered", "table-striped", "table-hover"])], titles=df.columns.values )
+    return render_template("demo-output.html", title=title, footer=footer, wc=wc, tweets= row_count, misinfo= predict["misinfo"], handle = predict["handle"], tables=[df.to_html(classes=["data", "table-bordered", "table-striped", "table-hover"])], titles=df.columns.values )
 
 if __name__ == '__main__':
     app.run(debug=True)

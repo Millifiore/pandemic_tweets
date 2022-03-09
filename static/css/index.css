@@ -222,3 +222,11 @@ div.demo-div-right p.demo-text {
     width: inherit;
   }
 }
+
+table {
+  background-color: #2d90a6;
+}
+
+th {
+  text-align: center;
+}
