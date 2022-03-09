@@ -89,7 +89,7 @@ lr_clf = log_reg(features, covid_dataset["label"])  # Saves the trained model
 # TWINT DATA
 def twint_parse(csv):
     print("in twint_parse")
-    twint_df = pd.read_csv(csv, encoding='cp1252')
+    twint_df = pd.read_csv(csv) # encoding='cp1252' for Windows
     twint_tweets = twint_df[['tweet']]  # Subsets the dataframe to only have the "tweet column"
 
     padded, attention_mask = pre_proc(twint_tweets['tweet'], tokenizer)  # Pre-processes the twint_dataframe
