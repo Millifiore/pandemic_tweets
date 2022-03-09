@@ -89,7 +89,7 @@ lr_clf = log_reg(features, covid_dataset["label"])  # Saves the trained model
 # TWINT DATA
 def twint_parse(csv):
     print("in twint_parse")
-    twint_df = pd.read_csv(csv)
+    twint_df = pd.read_csv(csv) # encoding='cp1252' for Windows
     twint_tweets = twint_df[['tweet']]  # Subsets the dataframe to only have the "tweet column"
 
     padded, attention_mask = pre_proc(twint_tweets['tweet'], tokenizer)  # Pre-processes the twint_dataframe
@@ -97,9 +97,11 @@ def twint_parse(csv):
 
     twint_labels = lr_clf.predict(features)  # Saves predicted labels as an array
     twint_df['label'] = twint_labels  # Adds a new column to twint_df for predicted labels
-    twint_json = pd.DataFrame.to_json(twint_df)  # Converts dataframe into JSON
+    
+    twint_df.to_csv("predictedTweets.csv", index=False)  # Converts dataframe into CSV
+    # twint_json = pd.Dataframe.to_json(twint_df)  # Converts dataframe into CSV
 
-    return twint_json
+    # return twint_json
 
 
 

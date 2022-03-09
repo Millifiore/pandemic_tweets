@@ -12,8 +12,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;500&display=swap" rel="stylesheet">
     
 
-    <!-- Bootstrap core CSS -->
-    <link rel= "stylesheet" href= "/static/css/bootstrap.min.css"/>
+      <!-- Bootstrap core CSS -->
+      <link rel= "stylesheet" href= "/static/css/bootstrap.min.css"/>
+      <!-- Custom styles for this template -->
+      <link rel= "stylesheet" href= "/static/css/index.css"/>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <style>
       .bd-placeholder-img {
@@ -35,7 +38,7 @@
     <!-- Custom styles for this template -->
     <link rel= "stylesheet" href= "/static/css/index.css"/>
   </head>
-  <body class="d-flex h-100 text-center text-white">
+  <body class="d-flex h-100 text-center text-white bg-dark">
     
 <div class="container d-flex p-3 mx-auto flex-column">
   <header class="mb-auto">
@@ -48,14 +51,20 @@
     <div class="row">
       <div class="col-6 overview">
         <div class="section intro">
-        <div class="row about-text">Prediction Output</div>
-        <div class="input-group mb-3 handle-input">
-          <span class="input-group-text" id="basic-addon1">@</span>
-          <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-        </div>
+          <p class="row about-text">Prediction Output</p>
+          <p class="about-text">Out of <b>{{tweets}}</b> tweets for <b>@{{handle}}</b>, our model detected <b>{{misinfo}}</b> tweet(s) that may contain misinformation. See labeled tweets below.</p>
+        <div class="row about-text">
+        <table class="mystyle">
+          {% for table in tables %}
+            {{titles[loop.index]}}
+            {{ table|safe }}
+          {% endfor %}
+        </table>
+      </div>
       </div>
       </div>
       <div class="col-6 demo">
+        <image class= "wc" src="{{wc}}" ></image>
       </div>
     </div>
 

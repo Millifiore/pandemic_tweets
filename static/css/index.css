@@ -222,3 +222,37 @@ div.demo-div-right p.demo-text {
     width: inherit;
   }
 }
+
+/* table {
+  background-color: #2d90a6;
+}
+
+th {
+  text-align: center;
+} */
+
+.mystyle {
+  font-size: 11pt; 
+  font-family: 'Red Hat Text', sans-serif;
+  border-collapse: collapse; 
+  border: 1px solid #2d90a6;
+
+}
+
+.mystyle td, th {
+  padding: 5px;
+  text-align: center;
+}
+
+.mystyle tr {
+  background: #2d90a6;
+}
+
+.mystyle tr:hover {
+  background: #2c545e;
+  cursor: pointer;
+}
+
+div.col-6.demo img {
+  padding: 4em 1em;
+}
