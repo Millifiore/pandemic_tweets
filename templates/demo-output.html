@@ -53,8 +53,8 @@
         <div class="section intro">
           <p class="row about-text">Prediction Output</p>
           <p class="about-text">Out of <b>{{tweets}}</b> tweets for <b>@{{handle}}</b>, our model detected <b>{{misinfo}}</b> tweet(s) that may contain misinformation. See labeled tweets below.</p>
-        <!-- <div class="row about-text">Prediction Output</div> -->
-        <table>
+        <div class="row about-text">
+        <table class="mystyle">
           {% for table in tables %}
             {{titles[loop.index]}}
             {{ table|safe }}
@@ -62,8 +62,9 @@
         </table>
       </div>
       </div>
+      </div>
       <div class="col-6 demo">
-        <image src="{{wc}}" ></image>
+        <image class= "wc" src="{{wc}}" ></image>
       </div>
     </div>
 

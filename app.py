@@ -39,7 +39,7 @@ def demo_output():
     wc, row_count = word_cloud('userTweets.csv')
     # twint_parse('userTweets.csv')
     predict, df = predictedTweets("predictedTweets.csv")
-    return render_template("demo-output.html", title=title, footer=footer, wc=wc, tweets= row_count, misinfo= predict["misinfo"], handle = predict["handle"], tables=[df.to_html(classes=["data", "table-bordered", "table-striped", "table-hover"])], titles=df.columns.values )
+    return render_template("demo-output.html", title=title, footer=footer, wc=wc, tweets= row_count, misinfo= predict["misinfo"], handle = predict["handle"], tables=[df.to_html(index=False,classes=["data", "mystyle"])], titles=df.columns.values )
 
 if __name__ == '__main__':
     app.run(debug=True)
