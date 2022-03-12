@@ -8,14 +8,14 @@ What is BCC? Good question! BCC is a tool to detect COVID-19 misinformation in t
 
 ### Built with
 
-- Python
-- HTML
-- CSS
+- Python (Flask API)
+- HTML/CSS
+- JQuery
 
 ## Getting started
 
 ### Dependencies
-Things that are automatically installed for you.
+Below are the necessary dependencies needed to run our tool:
 
 * Flask==2.0.2
 * matplotlib==3.5.1
@@ -30,7 +30,7 @@ Things that are automatically installed for you.
 ### Prerequisites
 Make sure you have these installed on your device. 
 
-* [Python](https://www.python.org/downloads/release/python-3910/)
+* [Python v3.8 and above](https://www.python.org/downloads/release/python-3910/)
 * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
 ### Installing
