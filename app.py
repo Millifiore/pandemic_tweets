@@ -9,7 +9,6 @@ app = Flask(__name__, template_folder="templates", static_folder='static')
 
 title = "detecting COVID-19 misinformation in text-based social media posts."
 footer = "This Single Page Application is powered by Flask and JQuery"
-rowcount = row_count("userTweets.csv")
 
 @app.route("/", methods=["GET", "POST"])
 def index():
