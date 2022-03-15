@@ -23,7 +23,6 @@ def word_cloud(csv):
         b64 = base64.b64encode(buffer.getvalue())
         image_64 = 'data:image/png;base64,' + urllib.parse.quote(b64)
         return image_64
-        # , row_count
 
 def row_count(csv):
     with open(csv, encoding="utf8", errors='ignore') as f:
