@@ -99,9 +99,6 @@ def twint_parse(csv):
     twint_df['label'] = twint_labels  # Adds a new column to twint_df for predicted labels
     
     twint_df.to_csv("predictedTweets.csv", index=False)  # Converts dataframe into CSV
-    # twint_json = pd.Dataframe.to_json(twint_df)  # Converts dataframe into CSV
-
-    # return twint_json
 
 
 
