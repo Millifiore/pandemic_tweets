@@ -14,6 +14,10 @@
  * Header
  */
 
+header{
+  text-align: left;
+}
+
 h3 {
   font-family: 'Red Hat Text', sans-serif;
 }
@@ -50,13 +54,12 @@ nav a {
  */
 
 body {
-  /* text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5); */
   text-shadow: none;
   box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
 }
 
 .overview {
-  background-color: #49d0ee;
+  background-color: #2A9D8F;
   height: auto;
   display: flex;
   align-items: center;
@@ -72,7 +75,7 @@ body {
 }
 
 .demo {
-  background-color: #2d90a6;
+  background-color: #264653;
   height: auto;
 }
 
@@ -136,7 +139,7 @@ body {
 }
 
 .about-text {
-  background-color: #2d90a6;
+  background-color: #264653;
   padding: 0.5em 1em 0.5em 1em;
   width: fit-content;
   margin: 10px;
@@ -155,9 +158,9 @@ p.demo-text {
   font-size: 12pt;
   padding: 0.25em 0.50em 0.25em 0.50em;
   width: fit-content;
-  margin: 10px;
+  margin: 10px 10px 30px 10px;
   color: white;
-  background-color: #49d0ee;
+  background-color: #2A9D8F;
 }
 
 div.about-div-left {
@@ -217,42 +220,61 @@ div.demo-div-right p.demo-text {
   width: 100%;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   .col-6 {
     width: inherit;
   }
 }
 
-/* table {
-  background-color: #2d90a6;
-}
-
-th {
-  text-align: center;
-} */
-
 .mystyle {
-  font-size: 11pt; 
+  font-size: .80em; 
   font-family: 'Red Hat Text', sans-serif;
   border-collapse: collapse; 
-  border: 1px solid #2d90a6;
-
+  border: 1px solid #264653;
 }
 
-.mystyle td, th {
+.mystyle th {
   padding: 5px;
   text-align: center;
 }
 
+.mystyle td {
+  padding: 5px;
+  text-align: initial;
+}
+
 .mystyle tr {
-  background: #2d90a6;
+  background: #264653;
 }
 
 .mystyle tr:hover {
-  background: #2c545e;
-  cursor: pointer;
+  background: #2a9d908c;
 }
 
 div.col-6.demo img {
-  padding: 4em 1em;
+  padding: 1em 1em;
+}
+
+.scrollable {
+  height: auto;
+  max-height: 25em;
+  overflow: scroll;
+}
+
+.wc-demo {
+  flex: 2;
+}
+
+::-webkit-scrollbar {
+  height: 12px;
+  width: 12px;
+  background: #264653;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a9d908c;
+}
+
+::-webkit-scrollbar-corner {
+  background: #264653;
 }
