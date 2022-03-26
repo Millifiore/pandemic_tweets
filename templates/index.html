@@ -22,8 +22,9 @@
       </div>
       <div class="container d-flex p-3 mx-auto flex-column">
         <header class="mb-auto">
-          <div>
-            <h3 class="float-md-start">{{ title }}</h3>
+          <div class="row">
+            <h2 class="float-md-start header">{{ title }}</h3>
+            <h4 class="float-md-start header">{{ subtitle }}</h3>
           </div>
         </header>
         <div class="container">
@@ -32,16 +33,15 @@
             <div class="col-6 overview">
               <div class="about-div-left">
                 <div class="section intro">
-                  <p class="row about-text">Overview</p>
-                  <p class="row about-text">Our team’s intention is to build an open source tool that will accurately label text-based posts as misinformation and point users to correct sources of COVID-19 information.</p>
+                  <p class="row about-text">What is BCC ML?</p>
+                  <p class="row about-text">An open-source tool that labels tweets as misinformation, in an effort to educate the public about misinformation on Twitter.</p>
                 </div>
                 <div class="section">
-                  <p class="row about-text">Why does this matter?</p>
-                  <p class="row about-text"> Everyday, posts are shared with the sole intent of informing those within your network. However, these shared posts may contain either falsehoods or outdated information. 
-                    Social Media Platforms are the public’s fastest source for consuming information, but are they accurately informing the public?</p>
+                  <p class="row about-text">Why is BCC ML needed?</p>
+                  <p class="row about-text"> COVID-19 caused widespread concerns globally, as people found factual social media sources have become hard to ascertain.</p>
                 </div>
                 <div class="section">
-                  <p class="row about-text">Potential Audience</p>
+                  <p class="row about-text">Our Audience</p>
                   <p class="row about-text">Our audience is the open source community. Developing an open source tool will allow for further improvements of the tool to be built within the community.</p>
                 </div>
               </div>
@@ -55,7 +55,7 @@
               </div>
               <div class="about-div-right">
                 <img class="diagram" src="/static/img/model_arch.svg">
-                <p class="row diagram-text">Our team decided that BERT (Bidirectional Encoder Representations from Transformers) was the best implementation of NLP to accurately detect misinformation in the social media post datasets. Our team chose to use DistiliBERT,a pre-trained version of BERT that is 40% smaller, 60% faster, and retains 97% of language understanding capabilities.</p>
+                <p class="row diagram-text">We used DistilBert, a pre-trained version of BERT (Bidirectional Encoder Representations from Transformers) to encode tweet data, and Logistic Regression to classify the encoded data. After testing and training our model using our dataset, we received an accuracy rate of 86.4%</p>
               </div>
             </div>
           </div>
