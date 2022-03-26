@@ -42,41 +42,35 @@
     
 <div class="container d-flex p-3 mx-auto flex-column">
   <header class="mb-auto">
-    <div>
-      <h3 class="float-md-start">{{title}}</h3>
+    <div class="row">
+      <h2 class="float-md-start header">{{ title }}</h3>
+        <h4 class="float-md-start header">{{ subtitle }}</h3>
     </div>
   </header>
-
   <div class="container">
     <div class="row">
       <div class="col-6 overview">
         <div class="section intro">
           <p class="row about-text">Prediction Output</p>
           <p class="about-text">Out of <b>{{tweets}}</b> tweets for <b>@{{handle}}</b>, our model detected <b>{{misinfo}}</b> tweet(s) that may contain misinformation. See labeled tweets below.</p>
-        <div class="row about-text">
+        <div class="row about-text scrollable">
         <table class="mystyle">
-          {% for table in tables %}
-            {{titles[loop.index]}}
-            {{ table|safe }}
-          {% endfor %}
+          {{ html | safe }}
         </table>
       </div>
       </div>
       </div>
-      <div class="col-6 demo">
+      <div class="col-6 demo wc-demo">
+        <div>
+          <nav class="nav nav-masthead justify-content-center float-md-end">
+            <a class="nav-link about" href="/about">About</a>
+            <a class="nav-link demo" href="/demo-input">Demo</a>
+          </nav>
+        </div>
         <image class= "wc" src="{{wc}}" ></image>
       </div>
     </div>
-
   </div>
-  <!-- <main class="px-3">
-    <h1>Cover your page.</h1>
-    <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-    <p class="lead">
-      <a href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Learn more</a>
-    </p>
-  </main> -->
-
   <footer class="mt-auto text-white-50">
     <p>{{footer}}</p>
   </footer>

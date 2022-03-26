@@ -22,8 +22,9 @@
       </div>
       <div class="container d-flex p-3 mx-auto flex-column">
         <header class="mb-auto">
-          <div>
-            <h3 class="float-md-start">{{ title }}</h3>
+          <div class="row">
+            <h2 class="float-md-start header">{{ title }}</h3>
+              <h4 class="float-md-start header">{{ subtitle }}</h3>
           </div>
         </header>
         <div class="container">
@@ -45,7 +46,6 @@
               </div>
               <div class="demo-div-right">
                 <div class="input-group mb-3 handle-input">
-                  <p class="demo-intro">Interested in seeing if a Twitter user posts legitimate information about COVID-19?</p>
                   <p class="demo-text">Please type in a user's Twitter handle starting without the "@" to generate a report:</p>
                   <form action="/" method="post">
                     <input
@@ -95,7 +95,7 @@
             "user_handle": twitterHandleVal
           },
           success: function(response) {
-            // hide overlay + spinner
+            // hide overlay + spinner:
             $(overlay).addClass("hide-overlay");
             $(spinner).addClass(hidden);
 
